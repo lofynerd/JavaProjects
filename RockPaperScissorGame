@@ -1,0 +1,82 @@
+import java.util.Scanner;    //for user input
+import java.util.Random;     //for computer move randomization
+
+public class RockPaperScissor {
+    public static void main(String[] args) {
+        
+        Scanner inputScanner = new Scanner(System.in);        //scanner for user input
+
+        // creating an object of Random class   
+        Random r = new Random();                             //for computer move
+
+        System.out.println("Welcome to Rock Paper Scissor game!");
+        System.out.println("Press 0 for Rock\nPress 1 for Paper\nPress 2 for Scissor");
+        System.out.print("Enter Your Choice: ");
+
+        int UserInput = inputScanner.nextInt();              //user input
+
+        // Generates random integers 0 to 2
+        int ComputerInput = r.nextInt(3);                   //computer move
+
+        if (UserInput == 0) {                              //Instance where user choose Rock
+            if (ComputerInput == 0) {                      //Instance where computer choose Rock
+                System.out.println("\nYou choose Rock");
+                System.out.println("\nComputer choose Rock");
+                System.out.println("\nIt's a Tie\n");
+            }
+            else if (ComputerInput == 1) {
+                System.out.println("\nYou choose Rock");  //Instance where user choose Rock and Computer choose Paper
+                System.out.println("\nComputer choose Paper");
+                System.out.println("\nComputer Wins!\n");
+                
+            }
+            else if (ComputerInput == 2) {                //Instance where user choose Rock and Computer choose Scissor
+                System.out.println("\nYou choose Rock");
+                System.out.println("\nComputer choose Scissor");
+                System.out.println("\nYou Win!\n");
+            }
+        }
+        else if (UserInput == 1) {                      //Instance where user choose Paper
+            if (ComputerInput == 0) {                   //Instance where Computer choose Rock
+                System.out.println("\nYou choose Paper");
+                System.out.println("\nComputer choose Rock");
+                System.out.println("\nYou Win!\n");
+            }
+            else if (ComputerInput == 1) {            //Instance where user choose Paper and Computer choose Paper
+                System.out.println("\nYou choose Paper");
+                System.out.println("\nComputer choose Paper");
+                System.out.println("\nIt's a Tie\n");
+                
+            }
+            else if (ComputerInput == 2) {            //Instance where user choose Paper and Computer choose Scissors
+                System.out.println("\nYou choose Paper");
+                System.out.println("\nComputer choose Scissors");
+                System.out.println("\nComputer Wins!\n");
+            }
+        
+        }
+        else if (UserInput == 2) {                  //Instance where user choose Scissors
+            if (ComputerInput == 0) {               //Instance where Computer choose Rock
+                System.out.println("\nYou choose Scissors");
+                System.out.println("\nComputer choose Rock");
+                System.out.println("\nComputer Win!\n");
+            }
+            else if (ComputerInput == 1) {          //Instance where user choose Scissor and Computer choose Paper
+                System.out.println("\nYou choose Scissors");
+                System.out.println("\nComputer choose Paper");
+                System.out.println("\nYou Win!\n");
+                
+            }
+            else if (ComputerInput == 2) {        //Instance where user choose Scissor and Computer choose Scissor
+                System.out.println("\nYou choose Scissors");
+                System.out.println("\nComputer choose Scissors");
+                System.out.println("\nIt's a Tie\n");
+            }
+        }
+        else{                                    //User chooses invalid input i.e.,(-4,6,etc)
+            System.out.println("Invalid Choice");
+            System.out.println("Press 0 for Rock\nPress 1 for Paper\nPress 2 for Scissor\n");
+        }
+        
+    }
+}
